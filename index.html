@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -105,6 +105,159 @@
             if (answer === "yes") {
                 message.innerHTML = "Yay! I'm so happy! ❤️";
                 message.style.display = "block";
+            } else {
+                alert("Oh no! Please rethink! 💔");
+                message.innerHTML = "I know you'll say Yes soon! 😊";
+                message.style.display = "block";
+                setTimeout(() => { message.style.display = "none"; }, 5000); // Changed to 5000 ms (5 seconds)
+            }
+        }
+    </script>
+</body>
+
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Girlfriend?</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightcoral; /* Background color */
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Heart shape with heartbeat animation */
+        .heart {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            transform: rotate(-45deg);
+            animation: heartbeat 1.5s infinite; /* Heartbeat animation */
+            margin: 20px auto;
+            margin-bottom: 75px; /* Increased margin-bottom */
+        }
+
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 50px;
+            top: 0;
+        }
+
+        /* Heartbeat animation */
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: rotate(-45deg) scale(1); /* Original size */
+            }
+            50% {
+                transform: rotate(-45deg) scale(1.2); /* Scale up */
+            }
+        }
+
+        /* Title Styling */
+        h1 {
+            font-size: 32px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Buttons and Styling */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100px;
+            font-weight: bold;
+        }
+
+        .yes {
+            background-color: green;
+            color: white;
+        }
+
+        .no {
+            background-color: red;
+            color: white;
+        }
+
+        .disabled {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+
+        /* Message Styling */
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: darkred;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heart"></div>
+        <h1>Will You Be My Girlfriend?</h1>
+        <div class="buttons">
+            <button class="btn yes" onclick="showMessage('yes')">Yes</button>
+            <button id="noBtn" class="btn no" onclick="showMessage('no')">No</button>
+        </div>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        function showMessage(answer) {
+            let message = document.getElementById("message");
+            let noButton = document.getElementById("noBtn");
+
+            if (answer === "yes") {
+                message.innerHTML = "Yay! I'm so happy! ❤️";
+                message.style.display = "block";
+                // Disable the "No" button after "Yes" is clicked
+                noButton.classList.add("disabled");
+                noButton.disabled = true;
             } else {
                 alert("Oh no! Please rethink! 💔");
                 message.innerHTML = "I know you'll say Yes soon! 😊";
