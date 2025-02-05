@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Girlfriend?</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: pink;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .heart {
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            position: relative;
+            transform: rotate(-45deg);
+            margin: 20px auto;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: '';
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart:before {
+            top: -40px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 40px;
+            top: 0;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100px;
+        }
+
+        .yes {
+            background-color: green;
+            color: white;
+        }
+
+        .no {
+            background-color: red;
+            color: white;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: darkred;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heart"></div>
+        <h1>Will You Be My Girlfriend?</h1>
+        <div class="buttons">
+            <button class="btn yes" onclick="showMessage('yes')">Yes</button>
+            <button class="btn no" onclick="showMessage('no')">No</button>
+        </div>
+        <div id="message" class="message"></div>
+    </div>
+    <script>
+        function showMessage(answer) {
+            let message = document.getElementById("message");
+            if (answer === "yes") {
+                message.innerHTML = "Yay! I'm so happy! ❤️";
+                message.style.display = "block";
+            } else {
+                alert("Oh no! Please rethink! 💔");
+                message.innerHTML = "I know you'll say Yes soon! 😊";
+                message.style.display = "block";
+                setTimeout(() => { message.style.display = "none"; }, 5000); // Changed to 5000 ms (5 seconds)
+            }
+        }
+    </script>
+</body>
+
+</html>
