@@ -1,3 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Girlfriend?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-section" id="inputSection">
+            <h2>Create Your Proposal</h2>
+            <div class="input-group">
+                <input type="text" id="senderName" placeholder="Your Name">
+                <input type="text" id="receiverName" placeholder="Her Name">
+            </div>
+            <button class="generate-btn" onclick="generateLink()">Generate Link</button>
+            <div id="linkContainer" class="generated-link"></div>
+        </div>
+
+        <div id="proposalSection" style="display: none;">
+            <div class="heart"></div>
+            <h1 id="proposalTitle">Will You Be My Girlfriend?</h1>
+            <div class="buttons">
+                <button class="btn yes" onclick="showMessage('yes')">Yes</button>
+                <button id="noBtn" class="btn no" onclick="showMessage('no')">No</button>
+            </div>
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
 <!-- <!DOCTYPE html>
 <html lang="en">
 
@@ -117,7 +161,7 @@
 
 </html>
  -->
-
+<!-- 
  <!DOCTYPE html>
 <html lang="en">
 
@@ -269,3 +313,4 @@
 </body>
 
 </html>
+ -->
