@@ -13,11 +13,12 @@
         <div class="input-section" id="inputSection">
             <h2>Create Your Proposal</h2>
             <div class="input-group">
-                <input type="text" id="senderName" placeholder="Your Name">
-                <input type="text" id="receiverName" placeholder="Her Name">
+                <input type="text" id="senderName" placeholder="Your Name" required>
+                <input type="text" id="receiverName" placeholder="His/Her Name" required>
             </div>
             <button class="generate-btn" onclick="generateLink()">Generate Link</button>
             <div id="linkContainer" class="generated-link"></div>
+            <div class="loading-spinner" id="loadingSpinner"></div>
         </div>
 
         <div id="proposalSection" style="display: none;">
